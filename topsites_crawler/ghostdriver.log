@@ -1,0 +1,150 @@
+[INFO  - 2018-10-30T15:59:50.170Z] GhostDriver - Main - running on port 59493
+[INFO  - 2018-10-30T15:59:50.728Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-10-30T15:59:50.728Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.customHeaders:  - {}
+[INFO  - 2018-10-30T15:59:50.728Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-10-30T15:59:50.728Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d539d840-dc5c-11e8-b546-c757676f8ea7
+[ERROR - 2018-10-30T16:00:12.326Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: [object XMLHttpRequest]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:12.327Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  logError (https://static.licdn.com/sc/h/71upozbw7t6agbzwl4oog1xlh,27ftp26z6dvrdcg640xdatntb,edz16jejjqcx42fe0m2ca4nx9:113)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:20.229Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: Name: TypeError
+Message: undefined is not a constructor (evaluating 'document.body.append(c)')
+----------
+Stack: 
+https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:4:21797
+a@https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:4:75040
+https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:4:75162
+c@https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:3:47030
+ [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:20.230Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  _reportToConsole (https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:16)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:21.095Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: Name: OpenYoloError
+Message: unsupportedBrowser: Unsupported browser - API disabled
+----------
+Stack: 
+
+ [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:21.095Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  _reportToConsole (https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:16)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:21.100Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: Name: OpenYoloError
+Message: unsupportedBrowser: Unsupported browser - API disabled
+----------
+Stack: 
+
+ [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:21.100Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  _reportToConsole (https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:16)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:22.769Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: Name: OpenYoloError
+Message: unsupportedBrowser: Unsupported browser - API disabled
+----------
+Stack: 
+
+ [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:22.769Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  _reportToConsole (https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:16)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:22.772Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: Name: OpenYoloError
+Message: unsupportedBrowser: Unsupported browser - API disabled
+----------
+Stack: 
+
+ [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:22.772Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  _reportToConsole (https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:16)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:24.711Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: Name: TypeError
+Message: null is not a constructor (evaluating 'l._showErrorCallback(e,t,n)')
+----------
+Stack: 
+showHtmlError@https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:4:19618
+showError@https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:4:19550
+https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:13:171293
+a@https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:4:75040
+https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:4:75162
+c@https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:3:47030
+openUrl@[native code]
+open@phantomjs://platform/webpage.js:281:25
+phantomjs://code/session_request_handler.js:495:36
+_execFuncAndWaitForLoadDecorator@phantomjs://code/session.js:212:23
+_postUrlCommand@phantomjs://code/session_request_handler.js:494:46
+_handle@phantomjs://code/session_request_handler.js:91:32
+_reroute@phantomjs://code/request_handler.js:61:20
+_handle@phantomjs://code/router_request_handler.js:78:46
+ [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:24.711Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  _reportToConsole (https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:16)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:24.712Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: Name: TypeError
+Message: null is not a constructor (evaluating 'l._showErrorCallback(e,t,n)')
+----------
+Stack: 
+showHtmlError@https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:4:19618
+showError@https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:4:19550
+https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:13:171293
+a@https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:4:75040
+https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:4:75162
+c@https://s.pinimg.com/webapp/js/vendor-react-33b7f07713ea0c229a55.js:3:47030
+openUrl@[native code]
+open@phantomjs://platform/webpage.js:281:25
+phantomjs://code/session_request_handler.js:495:36
+_execFuncAndWaitForLoadDecorator@phantomjs://code/session.js:212:23
+_postUrlCommand@phantomjs://code/session_request_handler.js:494:46
+_handle@phantomjs://code/session_request_handler.js:91:32
+_reroute@phantomjs://code/request_handler.js:61:20
+_handle@phantomjs://code/router_request_handler.js:78:46
+ [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:24.712Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  _reportToConsole (https://s.pinimg.com/webapp/js/entryChunk-www-unauth-4f537d7754eb0d1eca91.js:16)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:59.092Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: ReferenceError: Can't find variable: ue
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:59.092Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  global code (https://www.amazon.com/:2561)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:59.294Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - msg: Syntax error, unrecognized expression: 
+
+
+
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-10-30T16:00:59.294Z] Session [d539d840-dc5c-11e8-b546-c757676f8ea7] - page.onError - stack:
+  querySelectorAll (:0)
+  n (https://images-na.ssl-images-amazon.com/images/I/61gI9g8kEwL.js?AUIClients/AmazonUIjQuery#168183-T1:123)
+  find (https://images-na.ssl-images-amazon.com/images/I/61gI9g8kEwL.js?AUIClients/AmazonUIjQuery#168183-T1:127)
+  init (https://images-na.ssl-images-amazon.com/images/I/61gI9g8kEwL.js?AUIClients/AmazonUIjQuery#168183-T1:32)
+  b (https://images-na.ssl-images-amazon.com/images/I/61gI9g8kEwL.js?AUIClients/AmazonUIjQuery#168183-T1:30)
+  success (https://images-na.ssl-images-amazon.com/images/I/71iULtPe2nL._RC%7C61ybdwam-8L.js,41rfYLqGWfL.js,01PngnMp3uL.js,01wBjiz9OvL.js,216el1NpxhL.js,31SYqzmbU3L.js,51+klsvwgqL.js,311BikSax-L.js_.js?AUIClients/NavDesktopMetaAsset#desktop:327)
+  resolveWith (https://images-na.ssl-images-amazon.com/images/I/61gI9g8kEwL.js?AUIClients/AmazonUIjQuery#168183-T1:47)
+  d (https://images-na.ssl-images-amazon.com/images/I/61gI9g8kEwL.js?AUIClients/AmazonUIjQuery#168183-T1:162)
+  b (https://images-na.ssl-images-amazon.com/images/I/61gI9g8kEwL.js?AUIClients/AmazonUIjQuery#168183-T1:174)
+
+  phantomjs://platform/console++.js:263 in error
