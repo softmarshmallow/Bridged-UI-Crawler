@@ -1,9 +1,9 @@
 # Bridged-UI-Crawler
 
 
-##sorce: mobbin.design
+## sorce: mobbin.design
 > mobbin Crawler
 
 
-##source: sketchappreource.com
+## source: sketchappreource.com
 > sketch app resource crawler
