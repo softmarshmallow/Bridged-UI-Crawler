@@ -1,4 +1,5 @@
 from time import sleep
+import warnings
 
 
 class MobbinHandle:
@@ -58,5 +59,15 @@ class MobbinHandle:
         signinButton.click()
         sleep(3)
 
-        self.driver.switch_to.window(main_window_handle) #or driver.switch_to_default_content()
+        self.driver.switch_to.window(main_window_handle)  # or driver.switch_to_default_content()
 
+    def scroll_to_bottom(self) -> bool:
+        try:
+            bottom_loading_indicator = self.driver.find_element_by_xpath(
+                "//div[@class='sc-jKmXuR fiuBLV']")
+            self.driver.execute_script("arguments[0].scrollIntoView();",
+                                       bottom_loading_indicator)
+            return True
+        except Exception as e:
+            warnings.warn(e)
+            return False

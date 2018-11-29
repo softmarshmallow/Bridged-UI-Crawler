@@ -9,6 +9,16 @@ import scrapy
 
 
 class MobbinItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    url = scrapy.Field()
+    file_name = scrapy.Field()
+
+    app_name = scrapy.Field()
+    category = scrapy.Field()
+    mobbin_patterns = scrapy.Field()
+    mobbin_elements = scrapy.Field()
+
+    # image_id = scrapy.Field()
+    # file_url = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+
