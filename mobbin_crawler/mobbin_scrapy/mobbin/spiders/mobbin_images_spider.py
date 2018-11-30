@@ -57,9 +57,6 @@ class MobbinImagesSpiderSpider(scrapy.Spider):
                 item["image_urls"] = [data.file_url]
                 yield item
 
-                # FIXME For debug purpose
-                return
-
 
             # Exit Detail page by clicking 'X' button
                 close_detail_button = self.driver.find_element_by_xpath(
