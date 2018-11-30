@@ -30,14 +30,15 @@ class MobbinHandle:
         self.driver.get('http://mobbin.design/')
 
         # Click login button
-        # Large screen login button
-        login_button = self.driver.find_element_by_xpath(
-            '//button[@class="sc-bFADNz ctxfBC sc-dnqmqq dKFGsJ"]')
-        if not (login_button.is_displayed() and login_button.is_enabled()):
+        try:
+            # Large screen login button
+            login_button = self.driver.find_element_by_xpath(
+                '//button[@class="sc-bFADNz ctxfBC sc-dnqmqq dKFGsJ"]')
+            login_button.click()
+        except:
             # Small button login button
             login_button = self.driver.find_element_by_xpath("//h3[@class='sc-iybRtq khIrQf']")
-
-        login_button.click()
+            login_button.click()
 
         # sc-iybRtq khIrQf
         # WebDriverWait(self.driver, 10).until(ec.invisibility_of_element_located(login_button))
