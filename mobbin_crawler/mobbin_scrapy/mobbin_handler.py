@@ -32,6 +32,7 @@ class MobbinHandle:
         # Click login button
         login_button = self.driver.find_element_by_xpath(
             '//*[@id="root"]/div/div[3]/div/div[3]/div/div[3]/div/div[2]/div[1]/button')
+        WebDriverWait(self.driver, 10).until(ec.invisibility_of_element_located(login_button))
         login_button.click()
         sleep(1)
 
