@@ -6,7 +6,7 @@ import warnings
 from selenium.webdriver.support import expected_conditions as ec
 
 from mobbin_crawler.mobbin_scrapy.models import MobbinImageModel
-
+MOBBIN_DEFAULT_TIMEOUT = 15
 
 class MobbinHandle:
     def __init__(self, driver):
@@ -60,7 +60,7 @@ class MobbinHandle:
 
         # Switch to popup window
         self.driver.switch_to.window(signin_window_handle)
-        WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, "view_container")))
+        WebDriverWait(self.driver, MOBBIN_DEFAULT_TIMEOUT).until(ec.visibility_of_element_located((By.ID, "view_container")))
 
         #     ON Google Auth page
         emailElem = self.driver.find_element_by_id('identifierId')
@@ -125,10 +125,10 @@ class MobbinHandle:
 
         screenshot_img = self.driver.find_element_by_xpath("//img[@class='sc-dznXNo cHYHvz']").get_attribute("src")
         meta_container = self.driver.find_element_by_xpath("//div[@class='sc-cpHetk irphtn']")
-        meta_patterns = meta_container.find_elements_by_xpath("./div[1]/button")
-        meta_patterns_text = [meta_pattern.text for meta_pattern in meta_patterns]
-        meta_elements = meta_container.find_elements_by_xpath("./div[2]/button")
-        meta_elements_text = [meta_element.text for meta_element in meta_elements]
+        meta_patterns = meta_container.find_elements_by_xpath("./div[1]//button")
+        meta_patterns_texts = [meta_pattern.text for meta_pattern in meta_patterns]
+        meta_elements = meta_container.find_elements_by_xpath("./div[2]//button")
+        meta_elements_texts = [meta_element.text for meta_element in meta_elements]
 
         curr_url = self.driver.current_url
 
@@ -140,9 +140,12 @@ class MobbinHandle:
         mobbin_image_data.file_name = ""
         mobbin_image_data.file_url = screenshot_img
         mobbin_image_data.image_id = ""
-        mobbin_image_data.mobbin_elements = meta_elements_text
-        mobbin_image_data.mobbin_patterns = meta_patterns_text
+        mobbin_image_data.mobbin_elements = meta_elements_texts
+        mobbin_image_data.mobbin_patterns = meta_patterns_texts
         mobbin_image_data.ur = curr_url
+
+        print(meta_elements_texts)
+        print(meta_patterns_texts)
 
         return mobbin_image_data
 
