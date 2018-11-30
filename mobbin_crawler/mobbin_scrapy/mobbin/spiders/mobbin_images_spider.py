@@ -6,13 +6,20 @@ from selenium.webdriver import ChromeOptions
 from time import sleep
 
 from mobbin_crawler.mobbin_scrapy.mobbin.items import MobbinItem
+from mobbin_crawler.mobbin_scrapy.mobbin.settings import IMAGES_STORE, BASE_DATA_PATH
 from mobbin_crawler.mobbin_scrapy.mobbin_handler import MobbinHandle
 
+MOBBIN_DATA_SOURCE = BASE_DATA_PATH.joinpath("mobbin")
 
 class MobbinImagesSpiderSpider(scrapy.Spider):
     name = 'mobbin_images_spider'
     allowed_domains = ['mobbin.design']
     start_urls = ['https://mobbin.design/patterns']
+
+    custom_settings = {
+        "ITEM_PIPELINES": {'scrapy.pipelines.images.ImagesPipeline': 1},
+        "IMAGES_STORE": MOBBIN_DATA_SOURCE.as_posix()
+    }
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -74,7 +81,7 @@ if __name__ == '__main__':
     process = CrawlerProcess({
         'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)',
         'FEED_FORMAT': 'json',
-        'FEED_URI': 'data.json'
+        'FEED_URI': MOBBIN_DATA_SOURCE.joinpath("data.json").as_posix()
     })
 
     process.crawl(MobbinImagesSpiderSpider)
