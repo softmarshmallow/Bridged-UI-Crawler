@@ -13,6 +13,7 @@ class MobbinItem(scrapy.Item):
     file_name = scrapy.Field()
 
     app_name = scrapy.Field()
+    app_desc = scrapy.Field()
     category = scrapy.Field()
     mobbin_patterns = scrapy.Field()
     mobbin_elements = scrapy.Field()

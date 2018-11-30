@@ -33,7 +33,11 @@ Crawl available, scroll down when completed
 n = 0
 while true:
     n += 1
-    //div/[n]
+    try: 
+        find_by_xpath = //div/[n]
+        # click, go detail, parse data
+    except NoSuchElementException:
+        scroll
 ```
 
 
