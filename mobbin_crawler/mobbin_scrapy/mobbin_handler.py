@@ -33,7 +33,7 @@ class MobbinHandle:
         # Large screen login button
         login_button = self.driver.find_element_by_xpath(
             '//button[@class="sc-bFADNz ctxfBC sc-dnqmqq dKFGsJ"]')
-        if not login_button.is_displayed():
+        if not (login_button.isDisplayed() and login_button.isEnabled()):
             # Small button login button
             login_button = self.driver.find_element_by_xpath("//h3[@class='sc-iybRtq khIrQf']")
 
