@@ -23,9 +23,12 @@ class MobbinImagesSpiderSpider(scrapy.Spider):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        options = ChromeOptions()
+        chrome_options = ChromeOptions()
+        chrome_options.add_argument("--window-size=1920,1080")
+
         # options.headless = True
-        self.driver = webdriver.Chrome(chrome_options=options)
+        self.driver = webdriver.Chrome(chrome_options=chrome_options)
+
         self.mobbin_handle = MobbinHandle(self.driver)
         self.mobbin_handle.auto_login()
 
