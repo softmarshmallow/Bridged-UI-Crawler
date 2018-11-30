@@ -1,19 +1,39 @@
+import re
+import urllib
+
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from time import sleep
 import warnings
 from selenium.webdriver.support import expected_conditions as ec
-
+from urllib.parse import urljoin, urlparse, parse_qs
 from mobbin_crawler.mobbin_scrapy.models import MobbinImageModel
+from email.message import Message
+
+
 MOBBIN_DEFAULT_TIMEOUT = 15
+MOBBIN_BASE_URL = "http://mobbin.design/"
+
+
+def get_url_from_mail_to(mail_to_url):
+    try:
+        body = re.search(r'body=(.*?)&subject=', mail_to_url).group(1)
+    except AttributeError:
+        try:
+            body = re.search(r'body=(.*?)&amp;subject=', mail_to_url).group(1)
+        except AttributeError:
+            body = re.search(r'body=(.*?)&', mail_to_url).group(1)
+    url = urllib.parse.unquote(body)
+    return str(url)
+
 
 class MobbinHandle:
     def __init__(self, driver):
         self.driver = driver
 
     def manual_login(self):
-        self.driver.get('http://mobbin.design/')
+        self.driver.get(MOBBIN_BASE_URL)
         input("press enter if login complete...")
 
     def auto_login(self):
@@ -27,7 +47,7 @@ class MobbinHandle:
             main_window_handle = self.driver.current_window_handle
 
         #  Load main page
-        self.driver.get('http://mobbin.design/')
+        self.driver.get(MOBBIN_BASE_URL)
 
         # Click login button
         try:
@@ -122,6 +142,13 @@ class MobbinHandle:
         # Crawl Data from detail view
         app_name_text = self.driver.find_element_by_xpath("//h1[@class='sc-keFjpB jMBnlD']").text
         app_desc_text = self.driver.find_element_by_xpath("//h1[@class='sc-jWojfa RtCwr']").text
+        app_url_text = self.driver.find_element_by_xpath("//div[@class='sc-jkCMRl eyWWVY']/a").get_attribute("href")
+        app_url_text = urljoin(MOBBIN_BASE_URL, app_url_text)
+
+        email_to_url = self.driver.find_element_by_xpath("//a[@class='sc-dxgOiQ dtyrSn']").get_attribute("href")
+        print(email_to_url)
+        url = get_url_from_mail_to(email_to_url)
+
 
         screenshot_img = self.driver.find_element_by_xpath("//img[@class='sc-dznXNo cHYHvz']").get_attribute("src")
         meta_container = self.driver.find_element_by_xpath("//div[@class='sc-cpHetk irphtn']")
@@ -130,22 +157,22 @@ class MobbinHandle:
         meta_elements = meta_container.find_elements_by_xpath("./div[2]//button")
         meta_elements_texts = [meta_element.text for meta_element in meta_elements]
 
-        curr_url = self.driver.current_url
-
         # Assign to model data
         mobbin_image_data = MobbinImageModel()
         mobbin_image_data.app = app_name_text
         mobbin_image_data.app_desc = app_desc_text
+        mobbin_image_data.app_url = app_url_text
         mobbin_image_data.category = ""
-        mobbin_image_data.file_name = ""
         mobbin_image_data.file_url = screenshot_img
         mobbin_image_data.image_id = ""
         mobbin_image_data.mobbin_elements = meta_elements_texts
         mobbin_image_data.mobbin_patterns = meta_patterns_texts
-        mobbin_image_data.ur = curr_url
+        mobbin_image_data.url = url
 
         print(meta_elements_texts)
         print(meta_patterns_texts)
 
         return mobbin_image_data
+
+
 

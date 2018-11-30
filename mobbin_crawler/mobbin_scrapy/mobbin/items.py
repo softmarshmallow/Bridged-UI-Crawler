@@ -10,10 +10,9 @@ import scrapy
 
 class MobbinItem(scrapy.Item):
     url = scrapy.Field()
-    file_name = scrapy.Field()
-
     app_name = scrapy.Field()
     app_desc = scrapy.Field()
+    app_url = scrapy.Field()
     category = scrapy.Field()
     mobbin_patterns = scrapy.Field()
     mobbin_elements = scrapy.Field()

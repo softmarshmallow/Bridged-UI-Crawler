@@ -51,9 +51,9 @@ class MobbinImagesSpiderSpider(scrapy.Spider):
 
                 item = MobbinItem()
                 item["url"] = data.url
-                item["file_name"] = data.file_name
                 item["app_name"] = data.app
                 item["app_desc"] = data.app_desc
+                item["app_url"] = data.app_url
                 item["category"] = data.category
                 item["mobbin_patterns"] = data.mobbin_patterns
                 item["mobbin_elements"] = data.mobbin_elements
