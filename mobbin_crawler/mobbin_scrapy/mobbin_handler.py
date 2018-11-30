@@ -30,10 +30,17 @@ class MobbinHandle:
         self.driver.get('http://mobbin.design/')
 
         # Click login button
+        # Large screen login button
         login_button = self.driver.find_element_by_xpath(
-            '//*[@id="root"]/div/div[3]/div/div[3]/div/div[3]/div/div[2]/div[1]/button')
-        WebDriverWait(self.driver, 10).until(ec.invisibility_of_element_located(login_button))
+            '//button[@class="sc-bFADNz ctxfBC sc-dnqmqq dKFGsJ"]')
+        if not login_button.is_displayed():
+            # Small button login button
+            login_button = self.driver.find_element_by_xpath("//h3[@class='sc-iybRtq khIrQf']")
+
         login_button.click()
+
+        # sc-iybRtq khIrQf
+        # WebDriverWait(self.driver, 10).until(ec.invisibility_of_element_located(login_button))
         sleep(1)
 
         # After login options shows up, click google login
